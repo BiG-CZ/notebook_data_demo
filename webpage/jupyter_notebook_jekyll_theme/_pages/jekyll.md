@@ -34,14 +34,6 @@ for more info.
 gem install bundler
 ```
 
-- Checkout the GitHub repo to get the code:
-
-```
-cd /my/sourcecode/dir
-git clone https://github.com/ioos/ioos_jekyll_theme.git
-cd catalog
-```
-
 - Install dependencies via Bundler:
 
 ```

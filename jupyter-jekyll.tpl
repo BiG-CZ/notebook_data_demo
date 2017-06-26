@@ -87,6 +87,6 @@ unknown type  {{ cell.type }}
 {%- block footer -%}
 <br>
 Right click and choose Save link as... to
-[download](https://raw.githubusercontent.com/BiG-CZ/notebook_data_demos/master/notebooks/{{resources['metadata']['name']}}.ipynb)
-this notebook, or click [here](https://beta.mybinder.org/v2/gh/BiG-CZ/notebook_data_demos/master?filepath=notebooks/{{resources['metadata']['name']}}.ipynb) to run a live instance of this notebook.
+[download](https://raw.githubusercontent.com/BiG-CZ/notebook_data_demo/master/notebooks/{{resources['metadata']['name']}}.ipynb)
+this notebook, or click [here](https://beta.mybinder.org/v2/gh/BiG-CZ/notebook_data_demo/master?filepath=notebooks/{{resources['metadata']['name']}}.ipynb) to run a live instance of this notebook.
 {%- endblock footer -%}
