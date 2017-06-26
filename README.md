@@ -10,6 +10,8 @@ See the rendered version at https://BiG-CZ.github.io/notebook_data_demo
 
 To suggest a notebook or ask questions please open an issue at: https://github.com/BiG-CZ/notebook_data_demo/issues
 
+Data demo system based on the [The IOOS Data Demo Center](https://ioos.github.io/notebooks_demos/).
+
 ## Binder
 
 [![Binder](http://mybinder.org/badge.svg)](https://beta.mybinder.org/v2/gh/BiG-CZ/notebook_data_demo/master)
