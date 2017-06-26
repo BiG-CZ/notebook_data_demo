@@ -1,0 +1,71 @@
+language: generic
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/miniconda
+
+# Removing the directory will remove the env but leave the cached packages
+# at $HOME/miniconda/pkgs. That is a win-win because when re-creating the
+# env we will download only the new packages.
+before_cache:
+  - rm -rf $HOME/miniconda/envs/IOOS
+
+matrix:
+  fast_finish: true
+  include:
+    - os: linux
+      env: TEST_TARGET=default
+    - os: linux
+      env: TEST_TARGET=coding_standards
+    - os: linux
+      env: TEST_TARGET=publish
+    - os: osx
+      env: TEST_TARGET=default
+  allow_failures:
+    - os: osx
+      env: TEST_TARGET=default
+
+before_install:
+  - |
+    if [ "$TRAVIS_OS_NAME" == "osx" ]; then
+      URL="https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh"
+    elif [ "$TRAVIS_OS_NAME" == "linux" ] ; then
+      URL="https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh"
+    fi
+    echo ""
+    if [ ! -f $HOME/miniconda/bin/conda ] ; then
+      echo "Fresh miniconda installation."
+      wget $URL -O miniconda.sh
+      rm -rf $HOME/miniconda
+      bash miniconda.sh -b -p $HOME/miniconda
+    fi
+    export PATH="$HOME/miniconda/bin:$PATH"
+    conda config --set always_yes yes --set changeps1 no --set show_channel_urls true
+    conda update conda
+
+install:
+  - conda env create --file environment.yml --name BiG-CZ
+  - source activate BiG-CZ
+
+  # Debug.
+  - conda info --all
+  - conda list
+
+script:
+  - if [ $TEST_TARGET == "coding_standards" ]; then
+      flake8 --max-line-length=100 ;
+      python tests/test_coding_standards.py ;
+    fi
+
+  # Test python notebooks.
+  - if [ $TEST_TARGET == "default" ]; then
+      python tests/test_notebooks.py ;
+    fi
+
+  # Publish the notebooks.
+  - if [ $TEST_TARGET == "publish" ]; then
+      pushd webpage && python make_index.py && popd ;
+      find notebooks/ -maxdepth 1 -name \*.ipynb -print0 | xargs -0 -n1 jupyter nbconvert --to=markdown --template="jupyter-jekyll.tpl" --output-dir=webpage/_notebooks ;
+    fi
