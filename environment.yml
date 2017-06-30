@@ -6,6 +6,7 @@ channels:
 dependencies:
   - python=2.7
   - folium
+  - flake8
   - jupyter
   - jupyter_contrib_nbextensions
   - matplotlib

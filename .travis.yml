@@ -10,7 +10,12 @@ cache:
 # at $HOME/miniconda/pkgs. That is a win-win because when re-creating the
 # env we will download only the new packages.
 before_cache:
-  - rm -rf $HOME/miniconda/envs/IOOS
+  - rm -rf $HOME/miniconda/envs/BiG-CZ
+  - rm -rf $HOME/miniconda/envs/PAGE
+
+env:
+  global:
+    - secure: "FdmfFPlylPvVz5f+YIIpk1YnwndJoM8s+yyg16hxlycorfTpOaFA+em1TlUFqUWIAa0dc7JWgc0L90ui/Usv41un1Cli6nbG+3rM/Mb/vCSMQCVcbsyB9eFBJNSXmokwB7qtvVzVSXBCOGajLTNLefr7bT+AYzRwd7TaZWKgXJ04D7aRhcKp7nyRkc2ooWdWlpzsK7X9YRvTbWD2ghFHxB70JuA1Zv7VzluxFUJfrKTBwsjVzcZMYXekCjxJiXcIsnOHCZ7ybGlB9v63RvXhOrXcx4Iq7ONGCoeTGKk/8+eMOXYOoXP7tV4WGiltBODqT7zt15YNRSRAjLW7zTXpCJoDi154/F7pbafzJcanV7kOgAtjXMDBS0Krvy9OFokC2zcF2DeOrqWk1rDpnL2KqopsPjSlWDnzpd+bYL9dB5IvVeWvBHWYssjySnj+drrXFbYHx0uxgY62Ok9KiIY5X4QbgGA8ND7bEk2/FFmgAX9I44TxjXLk9P5Y1ka/yaR0eH/8FqdLJqkesMbCkiVz5UnDCAZgarN9bkOMpHHOLHNlS9E10wttiWXK1NbYQxGLgwj5zkuFbzPesYfdZxXqCcFSbZT+iNUJNLQJc/iYQ+bLpSEkQZytMoqmHlhFZRbT82Iu3pXChu7FA6MML5uL28YoYoxv6If2sl9vi+FZsOM="
 
 matrix:
   fast_finish: true
@@ -24,6 +29,8 @@ matrix:
     - os: osx
       env: TEST_TARGET=default
   allow_failures:
+    - os: linux
+      env: TEST_TARGET=coding_standards
     - os: osx
       env: TEST_TARGET=default
 
@@ -46,8 +53,9 @@ before_install:
     conda update conda
 
 install:
-  - conda env create --file environment.yml --name BiG-CZ
-  - source activate BiG-CZ
+  # We need to envs b/c the BiG-CZ software stack is not compatible with Pyhton 3 yet.
+  - conda env create --file webpage/environment.yml --name PAGE
+  - conda env create --file environment.yml --name BiG-CZ ;
 
   # Debug.
   - conda info --all
@@ -55,17 +63,23 @@ install:
 
 script:
   - if [ $TEST_TARGET == "coding_standards" ]; then
+      source activate BiG-CZ ;
       flake8 --max-line-length=100 ;
       python tests/test_coding_standards.py ;
     fi
 
   # Test python notebooks.
   - if [ $TEST_TARGET == "default" ]; then
+      source activate BiG-CZ ;
       python tests/test_notebooks.py ;
     fi
 
   # Publish the notebooks.
   - if [ $TEST_TARGET == "publish" ]; then
+      source activate BiG-CZ ;
       pushd webpage && python make_index.py && popd ;
       find notebooks/ -maxdepth 1 -name \*.ipynb -print0 | xargs -0 -n1 jupyter nbconvert --to=markdown --template="jupyter-jekyll.tpl" --output-dir=webpage/_notebooks ;
+      source deactivate && source activate PAGE ;
+      set -e ;
+      doctr deploy --built-docs=webpage . ;
     fi
