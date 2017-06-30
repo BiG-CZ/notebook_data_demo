@@ -3,7 +3,7 @@
 | Platform       | Status                                                                                                                                                                        |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Linux and OS X | [![Build Status](https://travis-ci.org/BiG-CZ/notebook_data_demo.svg?branch=master)](https://travis-ci.org/BiG-CZ/notebook_data_demo)                                                   |
-| Windows        | [![Build status](https://ci.appveyor.com/api/projects/status/0k2b8eurfg435xws/branch/master?svg=true)](https://ci.appveyor.com/project/ocefpaf/notebooks-demos/branch/master) |
+| Windows        | [![Build status]()]() |
 
 
 See the rendered version at https://BiG-CZ.github.io/notebook_data_demo
@@ -18,4 +18,4 @@ Data demo system based on the [The IOOS Data Demo Center](https://ioos.github.io
 
 ## License
 
-[![LICENSE](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://raw.githubusercontent.com/BiG-CZ/notebook_data_demo/master/LICENSE) 
+[![LICENSE](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://raw.githubusercontent.com/BiG-CZ/notebook_data_demo/master/LICENSE)
