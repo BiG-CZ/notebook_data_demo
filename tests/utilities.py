@@ -61,7 +61,7 @@ def check_style(notebook_code):
         f.write(notebook_code.strip())
     style_guide = flake8.get_style_guide(
         ignore=['W292', 'E226', 'E402'],
-        max_line_length=100
+        max_line_length=115
         )
     report = style_guide.input_file(fname)
     os.close(fid)

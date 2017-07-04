@@ -29,8 +29,6 @@ matrix:
     - os: osx
       env: TEST_TARGET=default
   allow_failures:
-    - os: linux
-      env: TEST_TARGET=coding_standards
     - os: osx
       env: TEST_TARGET=default
 
@@ -55,7 +53,7 @@ before_install:
 install:
   # We need to envs b/c the BiG-CZ software stack is not compatible with Pyhton 3 yet.
   - conda env create --file webpage/environment.yml --name PAGE
-  - conda env create --file environment.yml --name BiG-CZ ;
+  - conda env create --file environment.yml --name BiG-CZ
 
   # Debug.
   - conda info --all
