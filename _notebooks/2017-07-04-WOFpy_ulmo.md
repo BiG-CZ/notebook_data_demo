@@ -259,7 +259,9 @@ In&nbsp;[14]:
 </div>
 
 ```python
-print(ulmo.cuahsi.wof.get_values.__doc__)
+print(
+    ulmo.cuahsi.wof.get_values.__doc__.replace('<', '').replace('>', '')
+)
 ```
 <div class="output_area"><div class="prompt"></div>
 <pre>
@@ -274,12 +276,12 @@ print(ulmo.cuahsi.wof.get_values.__doc__)
             entry point to the service.
         site_code : str
             Site code of the site you'd like to get values for. Site codes MUST
-            contain the network and be of the form <network>:<site_code>, as is
+            contain the network and be of the form network:site_code, as is
             required by WaterOneFlow.
         variable_code : str
             Variable code of the variable you'd like to get values for. Variable
             codes MUST contain the network and be of the form
-            <vocabulary>:<variable_code>, as is required by WaterOneFlow.
+            vocabulary:variable_code, as is required by WaterOneFlow.
         start : ``None`` or datetime (see :ref:`dates-and-times`)
             Start of a date range for a query. If both start and end parameters are
             omitted, the entire time series available will be returned.
