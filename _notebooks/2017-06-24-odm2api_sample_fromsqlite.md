@@ -49,7 +49,7 @@ In&nbsp;[3]:
 allVars = read.getVariables()
 
 for x in allVars:
-    print("{}: {}".format(x.VariableCode, x.VariableNameCV))
+    print('{}: {}'.format(x.VariableCode, x.VariableNameCV))
 ```
 <div class="output_area"><div class="prompt"></div>
 <pre>
@@ -68,13 +68,13 @@ allPeople = read.getPeople()
 
 if allPeople:
     for x in allPeople:
-        print("{} {}".format(x.PersonFirstName, x.PersonLastName))
-        
+        print('{} {}'.format(x.PersonFirstName, x.PersonLastName))
+
 allaff = read.getAffiliations()
 
 if allaff:
     for x in allaff:
-        print("{}: {}".format(x.PersonObj.PersonFirstName, x.OrganizationID))
+        print('{}: {}'.format(x.PersonObj.PersonFirstName, x.OrganizationID))
 ```
 <div class="output_area"><div class="prompt"></div>
 <pre>
@@ -96,13 +96,13 @@ try:
     siteFeatures = read.getSamplingFeatures(type='Site')
     numSites = len(siteFeatures)
     for x in siteFeatures:
-        print x.SamplingFeatureCode + ": " + x.SamplingFeatureName
+        print(': '.format(x.SamplingFeatureCode, x.SamplingFeatureName))
 except Exception as e:
-    print("Unable to demo getSamplingFeatures(type='Site')\n{}".format(e))
+    print('Unable to demo getSamplingFeatures(type="Site")\n{}'.format(e))
 ```
 <div class="output_area"><div class="prompt"></div>
 <pre>
-    USU-LBR-Mendon: Little Bear River at Mendon Road near Mendon, Utah
+    : 
 
 </pre>
 </div>
@@ -117,7 +117,7 @@ read.getSamplingFeatures()
 
 
 
-    [<Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d70afd90>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'Elevation_m': 1345.0, 'ElevationDatumCV': u'NGVD29', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>]
+    [<Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746f86990>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'ElevationDatumCV': u'NGVD29', 'Elevation_m': 1345.0, 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>]
 
 
 
@@ -132,7 +132,7 @@ read.getSamplingFeatures(codes=['USU-LBR-Mendon'])
 
 
 
-    [<Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d70afd90>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'Elevation_m': 1345.0, 'ElevationDatumCV': u'NGVD29', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>]
+    [<Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746f86990>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'ElevationDatumCV': u'NGVD29', 'Elevation_m': 1345.0, 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>]
 
 
 
@@ -161,7 +161,7 @@ vars(sf_lst[0])
      'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah',
      'SamplingFeatureTypeCV': u'Site',
      'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f',
-     '_sa_instance_state': <sqlalchemy.orm.state.InstanceState at 0x7fd7d70afd90>}
+     '_sa_instance_state': <sqlalchemy.orm.state.InstanceState at 0x7f9746f86990>}
 
 
 
@@ -178,7 +178,7 @@ sf
 
 
 
-    <Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d70afd90>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'Elevation_m': 1345.0, 'ElevationDatumCV': u'NGVD29', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>
+    <Sites({'SamplingFeatureDescription': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746f86990>, 'SamplingFeatureGeotypeCV': u'Point', 'SamplingFeatureName': u'Little Bear River at Mendon Road near Mendon, Utah', 'ElevationDatumCV': u'NGVD29', 'Elevation_m': 1345.0, 'SamplingFeatureUUID': u'938e328c-0e38-11e6-819c-f45c8999816f', 'SamplingFeatureTypeCV': u'Site', 'SamplingFeatureCode': u'USU-LBR-Mendon', 'SamplingFeatureID': 1, 'FeatureGeometryWKT': u'POINT (-111.946402 41.718473)'})>
 
 
 
@@ -274,7 +274,7 @@ m
 
 
 
-<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL3VucGtnLmNvbS9sZWFmbGV0QDEuMC4xL2Rpc3QvbGVhZmxldC5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9hamF4Lmdvb2dsZWFwaXMuY29tL2FqYXgvbGlicy9qcXVlcnkvMS4xMS4xL2pxdWVyeS5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzMuMi4wL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL0xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLzIuMC4yL2xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMS4wLjAvbGVhZmxldC5tYXJrZXJjbHVzdGVyLXNyYy5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzEuMC4wL2xlYWZsZXQubWFya2VyY2x1c3Rlci5qcyI+PC9zY3JpcHQ+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vdW5wa2cuY29tL2xlYWZsZXRAMS4wLjEvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMS4wLjAvTWFya2VyQ2x1c3Rlci5EZWZhdWx0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzEuMC4wL01hcmtlckNsdXN0ZXIuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfMDQ1ZjcwYTMzNmQ2NGE2N2JlNmZkNzhkMGNhOTJlODYgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzA0NWY3MGEzMzZkNjRhNjdiZTZmZDc4ZDBjYTkyZTg2IiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIHNvdXRoV2VzdCA9IEwubGF0TG5nKC05MCwgLTE4MCk7CiAgICAgICAgICAgICAgICB2YXIgbm9ydGhFYXN0ID0gTC5sYXRMbmcoOTAsIDE4MCk7CiAgICAgICAgICAgICAgICB2YXIgYm91bmRzID0gTC5sYXRMbmdCb3VuZHMoc291dGhXZXN0LCBub3J0aEVhc3QpOwogICAgICAgICAgICAKCiAgICAgICAgICAgIHZhciBtYXBfMDQ1ZjcwYTMzNmQ2NGE2N2JlNmZkNzhkMGNhOTJlODYgPSBMLm1hcCgKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICdtYXBfMDQ1ZjcwYTMzNmQ2NGE2N2JlNmZkNzhkMGNhOTJlODYnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge2NlbnRlcjogWzQxLjcxODQ3MywtMTExLjk0NjQwMl0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB6b29tOiAxNiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heEJvdW5kczogYm91bmRzLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGF5ZXJzOiBbXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdvcmxkQ29weUp1bXA6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3JzOiBMLkNSUy5FUFNHMzg1NwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgCiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfNDNhYjc3ZTUxZjNhNGMxM2FlMWZkNmE4MDU1ODFlMjIgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgbWF4Wm9vbTogMTgsCiAgICAgICAgICAgICAgICAgICAgbWluWm9vbTogMSwKICAgICAgICAgICAgICAgICAgICBjb250aW51b3VzV29ybGQ6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgIG5vV3JhcDogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgYXR0cmlidXRpb246ICdEYXRhIGJ5IDxhIGhyZWY9Imh0dHA6Ly9vcGVuc3RyZWV0bWFwLm9yZyI+T3BlblN0cmVldE1hcDwvYT4sIHVuZGVyIDxhIGhyZWY9Imh0dHA6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcvY29weXJpZ2h0Ij5PRGJMPC9hPi4nLAogICAgICAgICAgICAgICAgICAgIGRldGVjdFJldGluYTogZmFsc2UKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF8wNDVmNzBhMzM2ZDY0YTY3YmU2ZmQ3OGQwY2E5MmU4Nik7CgogICAgICAgIAogICAgCgogICAgICAgICAgICB2YXIgbWFya2VyXzgyODkyZWUyOGFlYTRiMWNiZmFhYTk4ZTdiYzlmMjMxID0gTC5tYXJrZXIoCiAgICAgICAgICAgICAgICBbNDEuNzE4NDczLC0xMTEuOTQ2NDAyXSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBpY29uOiBuZXcgTC5JY29uLkRlZmF1bHQoKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIC5hZGRUbyhtYXBfMDQ1ZjcwYTMzNmQ2NGE2N2JlNmZkNzhkMGNhOTJlODYpOwogICAgICAgICAgICAKICAgIAoKICAgICAgICAgICAgICAgIHZhciBpY29uXzQxNDI2NzczZjUwYjQxZmRhMWRjNjhkODc5NDIwNzA0ID0gTC5Bd2Vzb21lTWFya2Vycy5pY29uKHsKICAgICAgICAgICAgICAgICAgICBpY29uOiAnaW5mby1zaWduJywKICAgICAgICAgICAgICAgICAgICBpY29uQ29sb3I6ICd3aGl0ZScsCiAgICAgICAgICAgICAgICAgICAgbWFya2VyQ29sb3I6ICdvcmFuZ2UnLAogICAgICAgICAgICAgICAgICAgIHByZWZpeDogJ2dseXBoaWNvbicsCiAgICAgICAgICAgICAgICAgICAgZXh0cmFDbGFzc2VzOiAnZmEtcm90YXRlLTAnCiAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgICBtYXJrZXJfODI4OTJlZTI4YWVhNGIxY2JmYWFhOThlN2JjOWYyMzEuc2V0SWNvbihpY29uXzQxNDI2NzczZjUwYjQxZmRhMWRjNjhkODc5NDIwNzA0KTsKICAgICAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHBvcHVwXzAyODgyMWI1NDQwZTQ3YTlhY2JkMzM0N2FkNGM4YTNhID0gTC5wb3B1cCh7bWF4V2lkdGg6ICczMDAnfSk7CgogICAgICAgICAgICAKICAgICAgICAgICAgICAgIHZhciBpX2ZyYW1lX2I5NTlmM2ZjMDQ3OTRjODE4YThlNDNhODlhMzBhODhkID0gJCgnPGlmcmFtZSBzcmM9ImRhdGE6dGV4dC9odG1sO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LENpQWdJQ0FLUENGRVQwTlVXVkJGSUdoMGJXdytDanhvZEcxc1BnbzhhR1ZoWkQ0S1BITjBlV3hsUGdwMFlXSnNaU0I3Q2lBZ0lDQjNhV1IwYURveE1EQWxPd3A5Q25SaFlteGxMQ0IwYUN3Z2RHUWdld29nSUNBZ1ltOXlaR1Z5T2lBeGNIZ2djMjlzYVdRZ1lteGhZMnM3Q2lBZ0lDQmliM0prWlhJdFkyOXNiR0Z3YzJVNklHTnZiR3hoY0hObE93cDlDblJvTENCMFpDQjdDaUFnSUNCd1lXUmthVzVuT2lBMWNIZzdDaUFnSUNCMFpYaDBMV0ZzYVdkdU9pQnNaV1owT3dwOUNuUmhZbXhsSTNRd01TQjBjanB1ZEdndFkyaHBiR1FvYjJSa0tTQjdDaUFnSUNCaVlXTnJaM0p2ZFc1a0xXTnZiRzl5T2lBalpXVmxPd3A5Q25SaFlteGxJM1F3TVNCMGNqcHVkR2d0WTJocGJHUW9aWFpsYmlrZ2V3b2dJQ0JpWVdOclozSnZkVzVrTFdOdmJHOXlPaU5tWm1ZN0NuMEtQQzl6ZEhsc1pUNEtQQzlvWldGa1BnbzhZbTlrZVQ0S0NqeDBZV0pzWlNCcFpEMGlkREF4SWo0S0lDQThkSEkrQ2lBZ0lDQThkR1ErUTI5a1pUd3ZkR1ErQ2lBZ0lDQThkR1ErVlZOVkxVeENVaTFOWlc1a2IyNDhMM1JrUGdvZ0lEd3ZkSEkrQ2lBZ1BIUnlQZ29nSUNBZ1BIUmtQbFI1Y0dWRFZqd3ZkR1ErQ2lBZ0lDQThkR1ErVTJsMFpUd3ZkR1ErQ2lBZ1BDOTBjajRLSUNBOGRISStDaUFnSUNBOGRHUStUbUZ0WlR3dmRHUStDaUFnSUNBOGRHUStUR2wwZEd4bElFSmxZWElnVW1sMlpYSWdZWFFnVFdWdVpHOXVJRkp2WVdRZ2JtVmhjaUJOWlc1a2IyNHNJRlYwWVdnOEwzUmtQZ29nSUR3dmRISStDand2ZEdGaWJHVStDand2WW05a2VUNEtQQzlvZEcxc1BnPT0iIHdpZHRoPSIzMTAiIHN0eWxlPSJib3JkZXI6bm9uZSAhaW1wb3J0YW50OyIgaGVpZ2h0PSIxMzAiPjwvaWZyYW1lPicpWzBdOwogICAgICAgICAgICAgICAgcG9wdXBfMDI4ODIxYjU0NDBlNDdhOWFjYmQzMzQ3YWQ0YzhhM2Euc2V0Q29udGVudChpX2ZyYW1lX2I5NTlmM2ZjMDQ3OTRjODE4YThlNDNhODlhMzBhODhkKTsKICAgICAgICAgICAgCgogICAgICAgICAgICBtYXJrZXJfODI4OTJlZTI4YWVhNGIxY2JmYWFhOThlN2JjOWYyMzEuYmluZFBvcHVwKHBvcHVwXzAyODgyMWI1NDQwZTQ3YTlhY2JkMzM0N2FkNGM4YTNhKTsKCiAgICAgICAgICAgIAogICAgICAgIAo8L3NjcmlwdD4=" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
+<div style="width:100%;"><div style="position:relative;width:100%;height:0;padding-bottom:60%;"><iframe src="data:text/html;charset=utf-8;base64,PCFET0NUWVBFIGh0bWw+CjxoZWFkPiAgICAKICAgIDxtZXRhIGh0dHAtZXF1aXY9ImNvbnRlbnQtdHlwZSIgY29udGVudD0idGV4dC9odG1sOyBjaGFyc2V0PVVURi04IiAvPgogICAgPHNjcmlwdD5MX1BSRUZFUl9DQU5WQVMgPSBmYWxzZTsgTF9OT19UT1VDSCA9IGZhbHNlOyBMX0RJU0FCTEVfM0QgPSBmYWxzZTs8L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL3VucGtnLmNvbS9sZWFmbGV0QDEuMC4xL2Rpc3QvbGVhZmxldC5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9hamF4Lmdvb2dsZWFwaXMuY29tL2FqYXgvbGlicy9qcXVlcnkvMS4xMS4xL2pxdWVyeS5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vYm9vdHN0cmFwLzMuMi4wL2pzL2Jvb3RzdHJhcC5taW4uanMiPjwvc2NyaXB0PgogICAgPHNjcmlwdCBzcmM9Imh0dHBzOi8vY2RuanMuY2xvdWRmbGFyZS5jb20vYWpheC9saWJzL0xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLzIuMC4yL2xlYWZsZXQuYXdlc29tZS1tYXJrZXJzLmpzIj48L3NjcmlwdD4KICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMS4wLjAvbGVhZmxldC5tYXJrZXJjbHVzdGVyLXNyYy5qcyI+PC9zY3JpcHQ+CiAgICA8c2NyaXB0IHNyYz0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzEuMC4wL2xlYWZsZXQubWFya2VyY2x1c3Rlci5qcyI+PC9zY3JpcHQ+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vdW5wa2cuY29tL2xlYWZsZXRAMS4wLjEvZGlzdC9sZWFmbGV0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9tYXhjZG4uYm9vdHN0cmFwY2RuLmNvbS9ib290c3RyYXAvMy4yLjAvY3NzL2Jvb3RzdHJhcC5taW4uY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL21heGNkbi5ib290c3RyYXBjZG4uY29tL2Jvb3RzdHJhcC8zLjIuMC9jc3MvYm9vdHN0cmFwLXRoZW1lLm1pbi5jc3MiIC8+CiAgICA8bGluayByZWw9InN0eWxlc2hlZXQiIGhyZWY9Imh0dHBzOi8vbWF4Y2RuLmJvb3RzdHJhcGNkbi5jb20vZm9udC1hd2Vzb21lLzQuNi4zL2Nzcy9mb250LWF3ZXNvbWUubWluLmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvTGVhZmxldC5hd2Vzb21lLW1hcmtlcnMvMi4wLjIvbGVhZmxldC5hd2Vzb21lLW1hcmtlcnMuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL2NkbmpzLmNsb3VkZmxhcmUuY29tL2FqYXgvbGlicy9sZWFmbGV0Lm1hcmtlcmNsdXN0ZXIvMS4wLjAvTWFya2VyQ2x1c3Rlci5EZWZhdWx0LmNzcyIgLz4KICAgIDxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iaHR0cHM6Ly9jZG5qcy5jbG91ZGZsYXJlLmNvbS9hamF4L2xpYnMvbGVhZmxldC5tYXJrZXJjbHVzdGVyLzEuMC4wL01hcmtlckNsdXN0ZXIuY3NzIiAvPgogICAgPGxpbmsgcmVsPSJzdHlsZXNoZWV0IiBocmVmPSJodHRwczovL3Jhd2dpdC5jb20vcHl0aG9uLXZpc3VhbGl6YXRpb24vZm9saXVtL21hc3Rlci9mb2xpdW0vdGVtcGxhdGVzL2xlYWZsZXQuYXdlc29tZS5yb3RhdGUuY3NzIiAvPgogICAgPHN0eWxlPmh0bWwsIGJvZHkge3dpZHRoOiAxMDAlO2hlaWdodDogMTAwJTttYXJnaW46IDA7cGFkZGluZzogMDt9PC9zdHlsZT4KICAgIDxzdHlsZT4jbWFwIHtwb3NpdGlvbjphYnNvbHV0ZTt0b3A6MDtib3R0b206MDtyaWdodDowO2xlZnQ6MDt9PC9zdHlsZT4KICAgIAogICAgICAgICAgICA8c3R5bGU+ICNtYXBfMzQwMjFmZDhjNWNiNGU4ZTkwY2RiZWVlNGRmYzc3NGEgewogICAgICAgICAgICAgICAgcG9zaXRpb24gOiByZWxhdGl2ZTsKICAgICAgICAgICAgICAgIHdpZHRoIDogMTAwLjAlOwogICAgICAgICAgICAgICAgaGVpZ2h0OiAxMDAuMCU7CiAgICAgICAgICAgICAgICBsZWZ0OiAwLjAlOwogICAgICAgICAgICAgICAgdG9wOiAwLjAlOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICA8L3N0eWxlPgogICAgICAgIAo8L2hlYWQ+Cjxib2R5PiAgICAKICAgIAogICAgICAgICAgICA8ZGl2IGNsYXNzPSJmb2xpdW0tbWFwIiBpZD0ibWFwXzM0MDIxZmQ4YzVjYjRlOGU5MGNkYmVlZTRkZmM3NzRhIiA+PC9kaXY+CiAgICAgICAgCjwvYm9keT4KPHNjcmlwdD4gICAgCiAgICAKCiAgICAgICAgICAgIAogICAgICAgICAgICAgICAgdmFyIHNvdXRoV2VzdCA9IEwubGF0TG5nKC05MCwgLTE4MCk7CiAgICAgICAgICAgICAgICB2YXIgbm9ydGhFYXN0ID0gTC5sYXRMbmcoOTAsIDE4MCk7CiAgICAgICAgICAgICAgICB2YXIgYm91bmRzID0gTC5sYXRMbmdCb3VuZHMoc291dGhXZXN0LCBub3J0aEVhc3QpOwogICAgICAgICAgICAKCiAgICAgICAgICAgIHZhciBtYXBfMzQwMjFmZDhjNWNiNGU4ZTkwY2RiZWVlNGRmYzc3NGEgPSBMLm1hcCgKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICdtYXBfMzQwMjFmZDhjNWNiNGU4ZTkwY2RiZWVlNGRmYzc3NGEnLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAge2NlbnRlcjogWzQxLjcxODQ3MywtMTExLjk0NjQwMl0sCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB6b29tOiAxNiwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG1heEJvdW5kczogYm91bmRzLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbGF5ZXJzOiBbXSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHdvcmxkQ29weUp1bXA6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY3JzOiBMLkNSUy5FUFNHMzg1NwogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB9KTsKICAgICAgICAgICAgCiAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHRpbGVfbGF5ZXJfMWNjOTc3ODgzOWJlNDc5OTlmOWRhMjgwMDUzZDE0NjIgPSBMLnRpbGVMYXllcigKICAgICAgICAgICAgICAgICdodHRwczovL3tzfS50aWxlLm9wZW5zdHJlZXRtYXAub3JnL3t6fS97eH0ve3l9LnBuZycsCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgbWF4Wm9vbTogMTgsCiAgICAgICAgICAgICAgICAgICAgbWluWm9vbTogMSwKICAgICAgICAgICAgICAgICAgICBjb250aW51b3VzV29ybGQ6IGZhbHNlLAogICAgICAgICAgICAgICAgICAgIG5vV3JhcDogZmFsc2UsCiAgICAgICAgICAgICAgICAgICAgYXR0cmlidXRpb246ICdEYXRhIGJ5IDxhIGhyZWY9Imh0dHA6Ly9vcGVuc3RyZWV0bWFwLm9yZyI+T3BlblN0cmVldE1hcDwvYT4sIHVuZGVyIDxhIGhyZWY9Imh0dHA6Ly93d3cub3BlbnN0cmVldG1hcC5vcmcvY29weXJpZ2h0Ij5PRGJMPC9hPi4nLAogICAgICAgICAgICAgICAgICAgIGRldGVjdFJldGluYTogZmFsc2UKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICApLmFkZFRvKG1hcF8zNDAyMWZkOGM1Y2I0ZThlOTBjZGJlZWU0ZGZjNzc0YSk7CgogICAgICAgIAogICAgCgogICAgICAgICAgICB2YXIgbWFya2VyX2Q4MmUzNmQzNmU0OTQ1YzVhMTAzYTc4MjM5MWQ5YTczID0gTC5tYXJrZXIoCiAgICAgICAgICAgICAgICBbNDEuNzE4NDczLC0xMTEuOTQ2NDAyXSwKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBpY29uOiBuZXcgTC5JY29uLkRlZmF1bHQoKQogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICkKICAgICAgICAgICAgICAgIC5hZGRUbyhtYXBfMzQwMjFmZDhjNWNiNGU4ZTkwY2RiZWVlNGRmYzc3NGEpOwogICAgICAgICAgICAKICAgIAoKICAgICAgICAgICAgICAgIHZhciBpY29uX2FmNjQ5Y2ZiMjczYzQwMTc4MDRiNWM2YThkMGViYjhmID0gTC5Bd2Vzb21lTWFya2Vycy5pY29uKHsKICAgICAgICAgICAgICAgICAgICBpY29uOiAnaW5mby1zaWduJywKICAgICAgICAgICAgICAgICAgICBpY29uQ29sb3I6ICd3aGl0ZScsCiAgICAgICAgICAgICAgICAgICAgbWFya2VyQ29sb3I6ICdvcmFuZ2UnLAogICAgICAgICAgICAgICAgICAgIHByZWZpeDogJ2dseXBoaWNvbicsCiAgICAgICAgICAgICAgICAgICAgZXh0cmFDbGFzc2VzOiAnZmEtcm90YXRlLTAnCiAgICAgICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgICBtYXJrZXJfZDgyZTM2ZDM2ZTQ5NDVjNWExMDNhNzgyMzkxZDlhNzMuc2V0SWNvbihpY29uX2FmNjQ5Y2ZiMjczYzQwMTc4MDRiNWM2YThkMGViYjhmKTsKICAgICAgICAgICAgCiAgICAKICAgICAgICAgICAgdmFyIHBvcHVwX2E3NTIzNWU2ODIwYTQ2OTQ5MWM4MTc2MWY1ZDY0Mjc0ID0gTC5wb3B1cCh7bWF4V2lkdGg6ICczMDAnfSk7CgogICAgICAgICAgICAKICAgICAgICAgICAgICAgIHZhciBpX2ZyYW1lXzg1Y2U5NjRkN2E2NDQ4YzViZTFmYWQ1YWIzZjk1NTZhID0gJCgnPGlmcmFtZSBzcmM9ImRhdGE6dGV4dC9odG1sO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LENpQWdJQ0FLUENGRVQwTlVXVkJGSUdoMGJXdytDanhvZEcxc1BnbzhhR1ZoWkQ0S1BITjBlV3hsUGdwMFlXSnNaU0I3Q2lBZ0lDQjNhV1IwYURveE1EQWxPd3A5Q25SaFlteGxMQ0IwYUN3Z2RHUWdld29nSUNBZ1ltOXlaR1Z5T2lBeGNIZ2djMjlzYVdRZ1lteGhZMnM3Q2lBZ0lDQmliM0prWlhJdFkyOXNiR0Z3YzJVNklHTnZiR3hoY0hObE93cDlDblJvTENCMFpDQjdDaUFnSUNCd1lXUmthVzVuT2lBMWNIZzdDaUFnSUNCMFpYaDBMV0ZzYVdkdU9pQnNaV1owT3dwOUNuUmhZbXhsSTNRd01TQjBjanB1ZEdndFkyaHBiR1FvYjJSa0tTQjdDaUFnSUNCaVlXTnJaM0p2ZFc1a0xXTnZiRzl5T2lBalpXVmxPd3A5Q25SaFlteGxJM1F3TVNCMGNqcHVkR2d0WTJocGJHUW9aWFpsYmlrZ2V3b2dJQ0JpWVdOclozSnZkVzVrTFdOdmJHOXlPaU5tWm1ZN0NuMEtQQzl6ZEhsc1pUNEtQQzlvWldGa1BnbzhZbTlrZVQ0S0NqeDBZV0pzWlNCcFpEMGlkREF4SWo0S0lDQThkSEkrQ2lBZ0lDQThkR1ErUTI5a1pUd3ZkR1ErQ2lBZ0lDQThkR1ErVlZOVkxVeENVaTFOWlc1a2IyNDhMM1JrUGdvZ0lEd3ZkSEkrQ2lBZ1BIUnlQZ29nSUNBZ1BIUmtQbFI1Y0dWRFZqd3ZkR1ErQ2lBZ0lDQThkR1ErVTJsMFpUd3ZkR1ErQ2lBZ1BDOTBjajRLSUNBOGRISStDaUFnSUNBOGRHUStUbUZ0WlR3dmRHUStDaUFnSUNBOGRHUStUR2wwZEd4bElFSmxZWElnVW1sMlpYSWdZWFFnVFdWdVpHOXVJRkp2WVdRZ2JtVmhjaUJOWlc1a2IyNHNJRlYwWVdnOEwzUmtQZ29nSUR3dmRISStDand2ZEdGaWJHVStDand2WW05a2VUNEtQQzlvZEcxc1BnPT0iIHdpZHRoPSIzMTAiIHN0eWxlPSJib3JkZXI6bm9uZSAhaW1wb3J0YW50OyIgaGVpZ2h0PSIxMzAiPjwvaWZyYW1lPicpWzBdOwogICAgICAgICAgICAgICAgcG9wdXBfYTc1MjM1ZTY4MjBhNDY5NDkxYzgxNzYxZjVkNjQyNzQuc2V0Q29udGVudChpX2ZyYW1lXzg1Y2U5NjRkN2E2NDQ4YzViZTFmYWQ1YWIzZjk1NTZhKTsKICAgICAgICAgICAgCgogICAgICAgICAgICBtYXJrZXJfZDgyZTM2ZDM2ZTQ5NDVjNWExMDNhNzgyMzkxZDlhNzMuYmluZFBvcHVwKHBvcHVwX2E3NTIzNWU2ODIwYTQ2OTQ5MWM4MTc2MWY1ZDY0Mjc0KTsKCiAgICAgICAgICAgIAogICAgICAgIAo8L3NjcmlwdD4=" style="position:absolute;width:100%;height:100%;left:0;top:0;border:none !important;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe></div></div>
 
 
 
@@ -291,7 +291,7 @@ read.getResults()
 
 
 
-    [<TimeSeriesResults({'ResultUUID': u'938fec1c-0e38-11e6-98c2-f45c8999816f', 'ValidDateTimeUTCOffset': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d6cdf090>, 'VariableID': 1, 'ProcessingLevelID': 1, 'StatusCV': u'Unknown', 'ValueCount': 24206, 'ValidDateTime': None, 'UnitsID': 96, 'FeatureActionID': 1, 'ResultDateTimeUTCOffset': -7, 'TaxonomicClassifierID': None, 'ResultTypeCV': u'Time series coverage', 'SampledMediumCV': u'Surface Water', 'ResultDateTime': datetime.datetime(2016, 4, 29, 12, 31, 23, 801947), 'ResultID': 1})>]
+    [<TimeSeriesResults({'ResultUUID': u'938fec1c-0e38-11e6-98c2-f45c8999816f', 'ValidDateTimeUTCOffset': None, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746c42d10>, 'VariableID': 1, 'ProcessingLevelID': 1, 'StatusCV': u'Unknown', 'ValueCount': 24206, 'ValidDateTime': None, 'UnitsID': 96, 'FeatureActionID': 1, 'ResultDateTimeUTCOffset': -7, 'TaxonomicClassifierID': None, 'ResultTypeCV': u'Time series coverage', 'SampledMediumCV': u'Surface Water', 'ResultDateTime': datetime.datetime(2016, 4, 29, 12, 31, 23, 801947), 'ResultID': 1})>]
 
 
 
@@ -307,7 +307,7 @@ firstResult.FeatureActionObj.ActionObj
 
 
 
-    <Actions({'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d6cf0850>, 'MethodID': 1, 'ActionDescription': u'An observation action that generated a time series result.', 'ActionFileLink': None, 'EndDateTime': datetime.datetime(2009, 1, 16, 12, 30), 'BeginDateTime': datetime.datetime(2007, 8, 16, 16, 30), 'EndDateTimeUTCOffset': -7, 'ActionTypeCV': u'Observation', 'ActionID': 1, 'BeginDateTimeUTCOffset': -7})>
+    <Actions({'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746bc9490>, 'MethodID': 1, 'ActionDescription': u'An observation action that generated a time series result.', 'ActionFileLink': None, 'EndDateTime': datetime.datetime(2009, 1, 16, 12, 30), 'BeginDateTimeUTCOffset': -7, 'EndDateTimeUTCOffset': -7, 'ActionTypeCV': u'Observation', 'ActionID': 1, 'BeginDateTime': datetime.datetime(2007, 8, 16, 16, 30)})>
 
 
 
@@ -324,22 +324,24 @@ try:
     # Call getResults, but return only the first result.
     firstResult = read.getResults()[0]
     action_firstResult = firstResult.FeatureActionObj.ActionObj
-    print("The FeatureAction object for the Result is: {}".format(firstResult.FeatureActionObj))
-    print("The Action object for the Result is: {}".format(action_firstResult))
-    print("\nThe following are some of the attributes for the Action that created the Result: \n" +
-          "ActionTypeCV: " + action_firstResult.ActionTypeCV + "\n" +
-          "ActionDescription: " + action_firstResult.ActionDescription + "\n" +
-          "BeginDateTime: " + str(action_firstResult.BeginDateTime) + "\n" +
-          "EndDateTime: " + str(action_firstResult.EndDateTime) + "\n" +
-          "MethodName: " + action_firstResult.MethodObj.MethodName + "\n" +
-          "MethodDescription: " + action_firstResult.MethodObj.MethodDescription)
+    print('The FeatureAction object for the Result is: {}'.format(firstResult.FeatureActionObj))
+    print('The Action object for the Result is: {}'.format(action_firstResult))
+    print(
+        '\nThe following are some of the attributes for the Action that created the Result: \n' +
+        'ActionTypeCV: ' + action_firstResult.ActionTypeCV + '\n' +
+        'ActionDescription: ' + action_firstResult.ActionDescription + '\n' +
+        'BeginDateTime: ' + str(action_firstResult.BeginDateTime) + '\n' +
+        'EndDateTime: ' + str(action_firstResult.EndDateTime) + '\n' +
+        'MethodName: ' + action_firstResult.MethodObj.MethodName + '\n' +
+        'MethodDescription: ' + action_firstResult.MethodObj.MethodDescription
+    )
 except Exception as e:
-    print("Unable to demo Foreign Key Example: {}".format(e))
+    print('Unable to demo Foreign Key Example: {}'.format(e))
 ```
 <div class="output_area"><div class="prompt"></div>
 <pre>
-    The FeatureAction object for the Result is: <FeatureActions({'FeatureActionID': 1, 'SamplingFeatureID': 1, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d6cdf6d0>, 'ActionID': 1})>
-    The Action object for the Result is: <Actions({'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d6cf0850>, 'MethodID': 1, 'ActionDescription': u'An observation action that generated a time series result.', 'ActionFileLink': None, 'EndDateTime': datetime.datetime(2009, 1, 16, 12, 30), 'BeginDateTime': datetime.datetime(2007, 8, 16, 16, 30), 'EndDateTimeUTCOffset': -7, 'ActionTypeCV': u'Observation', 'ActionID': 1, 'BeginDateTimeUTCOffset': -7})>
+    The FeatureAction object for the Result is: <FeatureActions({'FeatureActionID': 1, 'SamplingFeatureID': 1, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746bc6190>, 'ActionID': 1})>
+    The Action object for the Result is: <Actions({'_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746bc9490>, 'MethodID': 1, 'ActionDescription': u'An observation action that generated a time series result.', 'ActionFileLink': None, 'EndDateTime': datetime.datetime(2009, 1, 16, 12, 30), 'BeginDateTimeUTCOffset': -7, 'EndDateTimeUTCOffset': -7, 'ActionTypeCV': u'Observation', 'ActionID': 1, 'BeginDateTime': datetime.datetime(2007, 8, 16, 16, 30)})>
     
     The following are some of the attributes for the Action that created the Result: 
     ActionTypeCV: Observation
@@ -368,7 +370,7 @@ type(tsResult), vars(tsResult)
 
     (odm2api.ODM2.models.TimeSeriesResults,
      {'FeatureActionID': 1,
-      'FeatureActionObj': <FeatureActions({'FeatureActionID': 1, 'SamplingFeatureID': 1, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7fd7d6cdf6d0>, 'ActionID': 1})>,
+      'FeatureActionObj': <FeatureActions({'FeatureActionID': 1, 'SamplingFeatureID': 1, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x7f9746bc6190>, 'ActionID': 1})>,
       'ProcessingLevelID': 1,
       'ResultDateTime': datetime.datetime(2016, 4, 29, 12, 31, 23, 801947),
       'ResultDateTimeUTCOffset': -7,
@@ -383,7 +385,7 @@ type(tsResult), vars(tsResult)
       'ValidDateTimeUTCOffset': None,
       'ValueCount': 24206,
       'VariableID': 1,
-      '_sa_instance_state': <sqlalchemy.orm.state.InstanceState at 0x7fd7d6cdf090>})
+      '_sa_instance_state': <sqlalchemy.orm.state.InstanceState at 0x7f9746c42d10>})
 
 
 
