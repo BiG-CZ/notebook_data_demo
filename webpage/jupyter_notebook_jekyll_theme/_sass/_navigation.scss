@@ -131,7 +131,7 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    color: mix(#fff, $gray, 50%);
+    color: #818181;
     border: 1px solid $light-gray;
     border-radius: $border-radius;
 
@@ -175,7 +175,7 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background-color: $greedy-nav-background-color;
+  background-color: #5E5C57;
 
   a {
     display: block;
