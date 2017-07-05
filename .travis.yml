@@ -83,5 +83,5 @@ script:
     fi
 
 doctr:
-  key-path : 'webpage/gihub_key.enc'
+  key-path : 'webpage/github_deploy_key.enc'
   deploy-repo : 'BiG-CZ/notebook_data_demo'
