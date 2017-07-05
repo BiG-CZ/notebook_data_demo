@@ -79,5 +79,9 @@ script:
       find notebooks/ -maxdepth 1 -name \*.ipynb -print0 | xargs -0 -n1 jupyter nbconvert --to=markdown --template="jupyter-jekyll.tpl" --output-dir=webpage/_notebooks ;
       source deactivate && source activate PAGE ;
       set -e ;
-      doctr deploy --built-docs=webpage . ;
+      doctr deploy --sync --built-docs=webpage . ;
     fi
+
+doctr:
+  key-path : 'webpage/gihub_key.enc'
+  deploy-repo : 'BiG-CZ/notebook_data_demo'
