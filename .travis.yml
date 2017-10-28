@@ -29,6 +29,8 @@ matrix:
     - os: osx
       env: TEST_TARGET=default
   allow_failures:
+    - os: linux
+      env: TEST_TARGET=coding_standards
     - os: osx
       env: TEST_TARGET=default
 
