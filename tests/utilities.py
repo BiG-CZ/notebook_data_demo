@@ -46,10 +46,11 @@ def convert_to_python(notebook, template_file=None):
 def check_style(notebook_code):
     """
     The notebook PEP 8 test ignore:
-    W292: blank line at end of file (always present when using nbconvert)
-    E226: missing whitespace around arithmetic operator (not enforced by PEP 8)
-    E402: module level import not at top of file (for notebooks it is clearer
-    to import at the top of the cell of its first use.)
+    W292: blank line at end of file (always present when using nbconvert).
+    E226: missing whitespace around arithmetic operator (not enforced by PEP 8).
+    E402: module level import not at top of file (for notebooks it is clearer.
+    to import at the top of the cell of its first use.).
+    E703: to prevent variables repr before mpl figures.
 
     """
     lines = notebook_code.split('\n')
@@ -60,7 +61,7 @@ def check_style(notebook_code):
     with open(fname, 'w') as f:
         f.write(notebook_code.strip())
     style_guide = flake8.get_style_guide(
-        ignore=['W292', 'E226', 'E402'],
+        ignore=['W292', 'E226', 'E402', 'E703'],
         max_line_length=115
         )
     report = style_guide.input_file(fname)
